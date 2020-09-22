@@ -1,0 +1,86 @@
+@color: #1bb1b0;
+
+.c-hamburger {
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 0;
+    text-indent: -9999px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:focus {
+        outline: none;
+    }
+
+    span {
+        display: block;
+        position: absolute;
+        top: 18px;
+        left: 5px;
+        right: 5px;
+        height: 5px;
+        border-radius: 2px;
+        background: @color;
+
+        &:before, &:after {
+            position: absolute;
+            display: block;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: @color;
+            content: "";
+            border-radius: 2px;
+        }
+
+        &:before {
+            top: -10px;
+        }
+
+        &:after {
+            bottom: -10px;
+        }
+    }
+}
+
+.c-hamburger--htx {
+    //background-color: #535355;
+    
+    span {
+        transition: background 0s 0.3s;
+
+        &:before {
+            transition: top 0.3s 0.3s, transform 0.3s 0s;
+        }
+
+        &:after {
+            transition: bottom 0.3s 0.3s, transform 0.3s 0s;
+        }
+    }
+
+    &.is-active {
+        span {
+            background: none;
+
+            &:before {
+                top: 0;
+                transform: rotate(45deg);
+                transition: top 0.3s 0s, transform 0.3s 0.3s;
+            }
+
+            &:after {
+                bottom: 0;
+                transform: rotate(-45deg);
+                transition: bottom 0.3s 0s, transform 0.3s 0.3s;
+            }
+        }
+    }
+}

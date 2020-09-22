@@ -1,0 +1,80 @@
+﻿
+/* tables
+----------------------------------------------------------*/
+table {
+    background:#f2f2f2;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 0.75em;
+    border: 0 none;
+    border: 1px solid #ccc;
+}
+
+th {
+    font-size: 1em;
+    text-align: left;
+    border: none 0px;
+    padding-left: 0;
+    padding: 10px;
+    vertical-align: middle;
+    text-align: left;
+}
+
+    th a {
+        display: block;
+        position: relative;
+    }
+
+        th a:link, th a:visited, th a:active, th a:hover {
+            color: #333;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0;
+        }
+
+        th a:hover {
+            color: #000;
+        }
+
+    th.asc a, th.desc a {
+        margin-right: .75em;
+    }
+
+        th.asc a:after, th.desc a:after {
+            display: block;
+            position: absolute;
+            right: 0em;
+            top: 0;
+            font-size: 0.75em;
+        }
+
+        th.asc a:after {
+            content: '▲';
+        }
+
+        th.desc a:after {
+            content: '▼';
+        }
+
+td {
+    padding: 10px;
+    border: 0 none;
+    text-align: left;
+    background: #e2e2e2;
+    border: 1px solid #CCC;
+    font-size: 1em;
+    vertical-align: middle;
+    text-align:left;
+}
+    td a {
+        color:#333;
+    }
+table {
+    width: 100%;
+}
+tr.pager td {
+    padding: 0 0.25em 0 0;
+}
+tr.alt td {
+    background: #efeeef;
+}

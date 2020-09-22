@@ -1,0 +1,15 @@
+application/logs/*
+application/cache/*
+media/_css/*
+media/_js/*
+media/_img/*
+media/img/upload/*
+media/files/uploads/*
+
+!application/logs/.gitkeep
+!application/cache/.gitkeep
+!media/img/upload/.gitkeep
+!media/img/upload/empty.png
+!media/_css/.gitkeep
+!media/_js/.gitkeep
+!media/_img/.gitkeep

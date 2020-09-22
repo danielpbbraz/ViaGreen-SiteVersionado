@@ -1,0 +1,1 @@
+public function crop($width, $height, $offset_x = NULL, $offset_y = NULL)

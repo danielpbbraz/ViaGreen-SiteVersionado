@@ -1,0 +1,76 @@
+.transition(@propriedade: all 0.4s ease) {
+    transition: @propriedade;
+    -webkit-transition: @propriedade;
+    -moz-transition: @propriedade;
+    -o-transition: @propriedade;
+    -ms-transition: @propriedade;
+}
+
+.transition2(@propriedade: all 0.4s ease, @propriedade2: all 0.4s ease) {
+    transition: @propriedade;
+    -webkit-transition: @propriedade, @propriedade2;
+    -moz-transition: @propriedade, @propriedade2;
+    -o-transition: @propriedade, @propriedade2;
+    -ms-transition: @propriedade, @propriedade2;
+}
+
+.transform(@propriedade:rotate(360deg)) {
+    transform:@propriedade;
+    -webkit-transform:@propriedade;
+    -moz-transform:@propriedade;
+    -o-transform:@propriedade;
+    -ms-transform:@propriedade;
+}
+
+.box-sizing {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.vertical-align {
+    &:before {
+        content: '';
+        display: inline-block;
+        *display: inline; /*IE7 life-saver */
+        zoom: 1; /*IE7 life-saver */
+        vertical-align: middle;
+        height: 100%;
+     }
+
+    > :first-child {
+        display: inline-block;
+        *display: inline;/*IE7 life-saver */
+        zoom: 1; /*IE7 life-saver */
+        vertical-align: middle;
+    }
+}
+
+.opacity(@allBrowsers) {
+    @IE: @allBrowsers * 100;
+    opacity: @allBrowsers;
+    filter: alpha(opacity= @IE);
+}
+
+.clearfix {
+    &:after {
+        content: ".";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        height: 0;
+    }
+}
+
+*+html .clearfix {
+    display: inline-block;
+}
+
+html[xmlns] .clearfix {
+    display: block;
+}
+
+* html .clearfix {
+    height: 1%;
+}

@@ -1,0 +1,108 @@
+﻿html {
+    margin: 0;
+    padding: 0;
+    background:#fada47;
+    height:100%;
+}
+.validation-summary-errors, #mensagem, #authMessage {
+    position: absolute;
+    left:172px;
+    width: 289px;
+    top:210px;
+    font-size:12px;
+    line-height: 15px;
+    font-weight:normal;
+    border-radius: 3px;
+}
+#authMessage {
+	display: none;
+}
+body {
+    background: url(../img/bg.jpg) no-repeat top;
+    color: #585858;
+    font-size: .85em;
+    font-family: museo500, Verdana, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+    height:100%;
+    min-height: 700px;
+    min-width: 800px;
+    font-weight:normal;
+}
+#logo-cliente {
+    background:url(../img/logo_cliente.png) no-repeat;
+    width: 171px;
+    height: 86px;
+    position: absolute;
+    left: -172px;
+    top: 100px;
+}
+#area-login {
+    width: 310px;
+    height: 275px;
+    position: absolute;
+    left: 50%;
+    top: 284px;
+    margin-left: -155px;
+}
+    #area-login form {
+        padding-top: 45px;
+        margin-left:172px;
+    }
+input, textarea {
+    border: 1px solid #e2e2e2;
+    background: #fff;
+    color: #333;
+    font-size: 1.2em;
+    margin: 5px 0 6px 0;
+    padding: 5px;
+    width: 300px;
+    border-radius: 3px;
+}
+
+textarea {
+    font-family: inherit;
+    width: 500px;
+}
+
+    input:focus, textarea:focus {
+        border: 1px solid #7ac0da;
+    }
+
+input[type="checkbox"] {
+    background: transparent;
+    border: inherit;
+    width: auto;
+}
+
+input[type="submit"],
+input[type="button"],
+button {
+    font-family: museo500, Verdana, Helvetica, Sans-Serif;
+    background-color: #6c6c6c;
+    border: 1px solid #787878;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 7px;
+    margin-right: 8px;
+    width: auto;
+    border-radius: 3px;
+    color:#fff;
+}
+label {
+    font-weight:bold;
+    font-size: 1.1em;
+}
+h1 {
+    width: 324px;
+    height: 114px;
+    text-align:center;
+    text-indent: -9999px;
+    position: absolute;
+    left: 50%;
+    top: 63px;
+    margin-left:-112px;
+    background: url(../img/ocssologo.png) no-repeat;
+    font-size: 26px;
+}

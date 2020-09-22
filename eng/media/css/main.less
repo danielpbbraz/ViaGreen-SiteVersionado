@@ -1,0 +1,1798 @@
+@charset "utf-8";
+
+@import 'vendor/_normalize';
+@import 'vendor/_reset';
+@import 'vendor/_slick';
+@import 'vendor/_jquery.fancybox.less';
+@import 'vendor/_embed-responsive';
+@import '_fonts';
+@import '_variables';
+@import '_mixins';
+@import '_preloader';
+@import '_menu-hamburger';
+@import '_menu';
+@import '_animation';
+@import 'contact';
+@import 'products';
+
+body, html, #header {
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    list-style: none;
+}
+
+body {
+    color: @color-text;
+    font-family: @regular;
+    font-size: 17px;
+}
+
+h1, h2, h3, h4, h5, strong, b {
+    font-weight: normal;
+}
+
+[data-ani-type] {
+ visibility: hidden;
+
+    &[data-animated] {
+     visibility: visible;
+    }
+
+    @media (max-width: 1024px) {
+        visibility: visible;
+    }
+}
+
+.fancybox-overlay {
+    background-image: none;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.center {
+    .clearfix();
+    .box-sizing();
+    position: relative;
+    max-width: @width;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.tel {
+    color: inherit;
+    text-decoration: none !important;
+    //cursor: default;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.wrapper {
+    .clearfix();
+    .box-sizing();
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding-bottom: 78px;
+    overflow: hidden;
+}
+
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+
+    iframe, object, embed, video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.title {
+    display: block;
+    height: 40px;
+    font-size: 22px;
+    color: @color-featured2;
+    line-height: 40px;
+    text-transform: uppercase;
+    padding-left: 26px;
+    margin-bottom: 20px;
+    background-size: contain;
+}
+
+.lnk-know-more {
+    display: inline-block;
+    font-size: 15px;
+    font-family: @bold;
+    text-transform: uppercase;
+    margin-top: 5px;
+
+    span {
+        font-size: 19px;
+    }
+}
+
+//Botoes ativos
+#home #menu .lnk-start, #about-us #menu .lnk-omna, #hiperbarica #menu .lnk-specialties, #fique-informado #menu .lnk-stay-informed {
+    &:before {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+/*----------------------------------------
+    Header
+-----------------------------------------*/
+#header {
+    position: fixed;
+    width: 100%;
+    height: 130px;
+    top: 0;
+    left: 0;
+    font-family: @bold;
+    background-color: #fff;
+    z-index: 5;
+
+    .center {
+        max-width: 1430px;
+    }
+
+    .box-access {
+        position: absolute;
+        width: 660px;
+        top: 10px;
+        right: 30px;
+        font-size: 12px;
+        color: @color-featured1;
+        text-transform: uppercase;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #b2e5e5;
+
+        .box-query-certificate, .box-vgp-accerss {
+            float: left;
+            margin-right: 10px;
+
+            a {
+                display: none;
+            }
+        }
+
+        label {
+            float: left;
+
+            span, input {
+                float: left;
+            }
+        }
+
+        .field-form {
+            width: 90px;
+            background-color: #ffff;
+            border: 0;
+            border-bottom: 1px solid #00aaaa;
+            color: #6b91a3;
+            text-transform: uppercase;
+            margin-left: 10px;
+        }
+
+        .btn-send {
+            position: relative;
+            float: left;
+            display: block;
+            width: 18px;
+            height: 18px;
+            margin-left: 10px;
+            border-radius: 50%;
+            background: url(../img/icon-btn-send.png) no-repeat 8px center @color-featured1;
+            background-size: 5px auto;
+        }
+
+        .languages {
+            float: right;
+
+            li {
+                float: left;
+                margin-left: 10px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                a {
+                    display: block;
+                    width: 21px;
+                    height: 14px;
+                    text-indent: -9999px;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: contain;
+                }
+
+                .btn-portuguese {
+                    background-image: url(../img/idioma-portugues.png);
+                }
+
+                .btn-english {
+                    background-image: url(../img/idioma-ingles.png);
+                }
+
+                .btn-spanish {
+                    background-image: url(../img/idioma-espanhol.png);
+                }
+            }
+        }
+
+    }
+
+    .logo-viagreen {
+        float: left;
+        width: 223px;
+        height: 61px;
+        text-indent: -9999px;
+        margin-top: 35px;
+        background: url(../img/logo-viagreen.png) no-repeat center center;
+        background-size: contain;
+    }
+
+    .container-header {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255,255,255,.9);
+    }
+
+    #menu {
+        position: absolute;
+        top: 75px;
+        right: 30px;
+    }
+
+    .box-menu-mobile {
+        position: absolute;
+        display: none;
+        top: 48px;
+        right: 22px;
+        z-index: 4;
+    }
+}
+
+
+/*----------------------------------------
+    Main
+-----------------------------------------*/
+main {
+    position: relative;
+    z-index: 1;
+
+    .banner-home {
+        position: relative;
+        width: 100%;
+        height: 700px;
+        z-index: 2;
+    }
+
+    .slider-banner-home {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        .slick-list, .slick-track {
+            height: 100%;
+        }
+
+        .slick-dots {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: 15px;
+            text-align: center;
+
+            li {
+                display: inline-block;
+
+                button {
+                    .transition();
+                    display: block;
+                    width: 12px;
+                    height: 12px;
+                    border: 0;
+                    text-indent: -9999px;
+                    border-radius: 50%;
+                    margin: 0 3px;
+                    background-color: #00e8e9;
+                }
+
+                &.slick-active {
+                    button {
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+
+        .slider-item {
+            width: 100%;
+            height: 100%;
+
+            figure {
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: cover;
+            }
+
+            h1 {
+                position: absolute;
+                top: 50%;
+                left: 13%;
+                font-size: 54px;
+                line-height: 55px;
+                font-family: @light;
+                text-transform: uppercase;
+                color: @color-featured1;
+                margin: -20px 0 20px 0;
+
+                span {
+                    display: block;
+                    font-family: @bold;
+                }
+            }
+        }
+    }
+
+    .parallax-viagreen {
+        position: relative;
+        color: #fff;
+        font-size: 17px;
+        text-align: justify;
+        padding-top: 130px;
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: url(../img/bg-viagreen.png) repeat-x 0 0 #023d7a;
+        }
+
+        h1 {
+            font-size: 35px;
+            text-transform: uppercase;
+            font-family: @light;
+            margin-bottom: 10px;
+        }
+
+        .line-map {
+            .transform(translateX(-50%));
+            position: absolute;
+            top: 0;
+            left: 50%;
+        }
+
+        .cloud {
+            position: absolute;
+            left: 50%;
+
+            &.cloud-01 {
+                top: 370px;
+                left: 50%;
+                margin-left: -960px;
+            }
+
+            &.cloud-02 {
+                top: 575px;
+                margin-left: -290px;
+            }
+
+            &.cloud-03 {
+                top: 575px;
+                margin-left: 600px;
+            }
+
+            &.cloud-04 {
+                top: 950px;
+                margin-left: -760px;
+            }
+
+            &.cloud-05 {
+                top: 955px;
+                margin-left: 590px;
+            }
+        }
+
+        .globe {
+            position: absolute;
+            top: -135px;
+            left: 50%;
+            margin-left: -290px;
+        }
+    }
+
+    .viagreen-home {
+        margin-top: -130px;
+
+        .container {
+            height: 1164px;
+
+            &:before {
+                .transform(translateX(-50%));
+                position: absolute;
+                content: "";
+                width: 1920px;
+                height: 113px;
+                bottom: 0;
+                left: 50%;
+                background: url(../img/curva-vaigreen-home.png) no-repeat center center;
+                z-index: 10;
+            }
+        }
+
+        .text-01 {
+            position: absolute;
+            width: 375px;
+            top: 230px;
+            left: 50%;
+            margin-left: -482px;
+
+            h1, .lnk-know-more {
+                color: #00383f;
+            }
+        }
+
+        .text-02 {
+            position: absolute;
+            width: 1110px;
+            top: 736px;
+            left: 50%;
+            margin-left: -555px;
+
+            .cloud-co2 {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            .text {
+                width: 305px;
+                margin: 75px 0 0 570px;
+
+                h1, .lnk-know-more {
+                    color: #00f6ff;
+                }
+            }
+
+            .seal-vgp {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+
+    .eco-mission {
+        padding: 50px 0 100px;
+        background-color: #f1f1f1;
+
+        h1 {
+            position: relative;
+            width: 520px;
+            font-size: 32px;
+            text-transform: uppercase;
+            line-height: 46px;
+            color: #6f6f6f;
+            font-family: @light;
+            margin: 0 auto 70px;
+
+            span {
+                float: right;
+                width: 336px;
+                height: 44px;
+                text-indent: -9999px;
+                background: url(../img/eco2-emission.png) no-repeat center center;
+                background-size: contain;
+            }
+        }
+
+        .video {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        ul {
+            .clearfix();
+            width: 100%;
+            margin-top: 85px;
+
+            li {
+                .box-sizing();
+                float: left;
+                width: 33.33%;
+                height: 230px;
+                text-align: center;
+                font-size: 16px;
+                padding: 0 15px;
+                border-left: 1px solid #d3d3d3;
+
+                &:first-child {
+                    border: 0;
+                }
+
+                a {
+                    display: block;
+                    color: inherit;
+                }
+
+                h2 {
+                    display: inline-block;
+                    width: 89px;
+                    height: 88px;
+                    text-indent: -9999px;
+                    margin: 30px 0;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: contain;
+                }
+
+                .icon-eco-freight {
+                    background-image: url(../img/eco2-freight.png);
+                }
+
+                .icon-eco-rotas {
+                    background-image: url(../img/eco2-rotas.png);
+                }
+
+                .icon-eco-flight {
+                    background-image: url(../img/eco2-flight.png);
+                }
+            }
+        }
+    }
+
+    .solution-home {
+        .clearfix();
+
+        .pull-left {
+            position: relative;
+            width: 50%;
+            height: 460px;
+            overflow: hidden;
+        }
+
+        a {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        figure {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .text {
+            .transform(translateY(-50%));
+            position: absolute;
+            top: 50%;
+            color: #fff;
+            text-align: justify;
+
+            h1 {
+                font-size: 32px;
+                line-height: 30px;
+                font-family: @light;
+                text-transform: uppercase;
+                margin-bottom: 30px;
+
+                span {
+                    display: block;
+                    font-family: @bold;
+                }
+            }
+        }
+
+        .solution-ecommerce {
+            figure {
+                background-image: url(../img/bg-ecommerce-home.jpg);
+            }
+
+            .text {
+                width: 284px;
+                right: 108px;
+
+                h1 span {
+                    color: #30e09e;
+                }
+            }
+        }
+
+        .solution-consulting {
+            figure {
+                background-image: url(../img/bg-ambiental-home.jpg);
+            }
+
+            .text {
+                width: 408px;
+                left: 108px;
+
+                h1 span {
+                    color: #5b9a08;
+                }
+            }
+        }
+    }
+
+    .viagreen-internal {
+        .container {
+            padding-bottom: 150px;
+        }
+
+        .cloud {
+            &.cloud-02 {
+                top: 460px;
+                margin-left: -315px;
+            }
+
+            &.cloud-04 {
+                margin-left: -860px;
+            }
+        }
+
+        .globe {
+            margin-left: -215px;
+        }
+
+        .text-01 {
+            width: 415px;
+            margin: 226px 0 0 80px;
+
+            h1 {
+                color: #00383f;
+            }
+        }
+
+        .text-02, .text-03, .text-04 {
+            position: relative;
+
+            h1 {
+                color: #61e8f4;
+            }
+
+            img {
+                position: absolute;
+            }
+        }
+
+        .text-02 {
+            width: 455px;
+            margin: 307px auto 0;
+            padding-left: 422px;
+
+            img {
+                top: -60px;
+                left: 0;
+            }
+        }
+
+        .text-03 {
+            width: 445px;
+            margin: 148px 0 0 60px;
+            padding-right: 482px;
+
+            img {
+                top: -49px;
+                right: 0;
+            }
+        }
+
+        .text-04 {
+            width: 472px;
+            margin: 218px auto 0;
+            padding-left: 396px;
+
+            img {
+                top: -45px;
+                left: 0;
+            }
+        }
+    }
+
+    .banner-internal-top {
+        position: relative;
+        padding-top: 130px;
+        overflow: hidden;
+
+        figure {
+            position: absolute;
+            width: 100%;
+            top: 130px;
+            bottom: 0;
+            left: 0;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .center {
+            height: 100%;
+        }
+
+        .text {
+            font-size: 17px;
+            text-align: justify;
+
+            h1 {
+                font-size: 35px;
+                text-transform: uppercase;
+                font-family: @light;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .banner-brand {
+        height: 522px;
+
+        figure {
+            background-image: url(../img/banner-marca.jpg);
+        }
+
+        .text {
+            .transform(translateY(-50%));
+            position: absolute;
+            width: 540px;
+            top: 50%;
+            left: 0;
+            color: #0b344c;
+
+            h1 {
+                color: #fff;
+            }
+        }
+    }
+
+    .symbol {
+        padding: 70px 0 100px;
+        background-color: #f1f2f2;
+
+        h1 {
+            text-transform: uppercase;
+            font-size: 35px;
+            font-family: @light;
+            color: @color-featured1;
+        }
+
+        ul {
+            .clearfix();
+            margin-top: 100px;
+
+            li {
+                .box-sizing();
+                float: left;
+                width: 25%;
+                text-align: center;
+                padding: 0 20px;
+
+                figure {
+                    display: block;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+
+    .symbol-content {
+        position: relative;
+        min-height: 550px;
+        padding-bottom: 60px;
+        text-align: justify;
+        color: #0b344c;
+
+        .symbol-big {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            margin-left: -934px;
+        }
+
+        .text-01 {
+            float: right;
+            width: 84%;
+            margin: 120px 0 45px;
+        }
+
+        .text-02 {
+            float: right;
+            width: 40%;
+
+            img {
+                position: relative;
+                display: block;
+                width: 338px;
+                margin: 0 auto 60px;
+            }
+        }
+    }
+}
+
+
+/*----------------------------------------
+    Footer
+-----------------------------------------*/
+#footer {
+    position: absolute;
+    width: 100%;
+    height: 78px;
+    left: 0;
+    bottom: 0;
+    color: #f1f1f1;
+    font-family: @bold;
+    overflow: hidden;
+    background-color: #084765;
+
+    .center {
+        max-width: 1366px;
+        height: 100%;
+        padding: 0;
+    }
+
+    .ocsso {
+        .transform(translateY(-50%));
+        position: absolute;
+        width: 129px;
+        height: 15px;
+        top: 50%;
+        left: 10px;
+        text-indent: -9999px;
+        background: url(../img/logo-ocsso.png) no-repeat center center;
+        background-size: contain;
+    }
+
+    small {
+        display: block;
+        text-align: center;
+        font-size: 11px;
+        line-height: 78px;
+    }
+
+    .box-cdp {
+        .transform(translateY(-50%));
+        position: absolute;
+        max-width: 254px;
+        top: 50%;
+        right: 10px;
+        text-align: center;
+        font-size: 8px;
+        color: #fff;
+        text-transform: uppercase;
+
+        img {
+            display: inline-block;
+            margin-top: 5px;
+        }
+    }
+}
+
+/*----------------------------------------
+    Desktop
+-----------------------------------------*/
+.desktop {
+    #menu ul.dropdown {
+        > li a {
+            &:before {
+                .transform(translateX(-50%));
+                .transition();
+                position: absolute;
+                content: "";
+                width: 0;
+                height: 2px;
+                left: 50%;
+                bottom: -2px;
+                opacity: 0;
+                background-color: #00aaaa;
+            }
+
+            &:hover {
+                &:before {
+                    width: 100%;
+                    opacity: 1;
+                }
+            }
+        }
+
+        ul li a {
+            &:before {
+                display: none;
+            }
+        }
+    }
+
+    main {
+        .eco-mission ul li a {
+            h2 {
+                .transition();
+            }
+
+            &:hover {
+                h2 {
+                    .transform(scale(1.1));
+                }
+            }
+        }
+
+        .solution-home {
+            figure {
+                .transition();
+            }
+
+            a:hover {
+                figure {
+                    .transform(scale(1.1));
+                }
+            }
+        }
+    }
+
+    &#eco-emission .content ul li a {
+        h2 {
+            .transition();
+        }
+
+        &:hover {
+            h2 {
+                .transform(scale(1.1));
+            }
+        }
+    }
+
+    &#contact .form [type=submit] {
+        .transition();
+
+        &:hover {
+            background-color: darken(#00abab,10%);
+        }
+    }
+}
+
+.mobile {
+    [data-ani-type] {
+        visibility: visible;
+    }
+}
+
+
+/*----------------------------------------
+    Responsivo
+-----------------------------------------*/
+@media only screen and (max-width : 1600px) {
+    main {
+        .slider-banner-home {
+            .slider-item {
+                h1 {
+                    left: 4%;
+                    font-size: 40px;
+                    line-height: 42px;
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width : 1265px) {
+    main {
+        .solution-home {
+            .solution-ecommerce .text {
+                width: 70%;
+                right: 10%;
+                margin-right: 0;
+            }
+
+            .solution-consulting .text {
+                width: 70%;
+                left: 10%;
+            }
+        }
+
+        .parallax-viagreen {
+            .globe {
+                width: 1000px;
+            }
+        }
+
+        .viagreen-home {
+            .text-01 {
+                margin-left: -462px;
+            }
+
+            .text-02 {
+                width: 950px;
+                margin-left: -475px;
+
+                .cloud-co2 {
+                    width: 400px;
+                }
+
+                .text {
+                    margin: 50px 0 0 450px;
+                }
+
+                .seal-vgp {
+                    width: 200px;
+                }
+            }
+        }
+
+        .viagreen-internal {
+            .globe {
+                margin-left: -280px;
+            }
+
+            .text-01 {
+                width: 400px;
+                margin: 226px 0 0 20px;
+            }
+
+            .text-03 {
+                margin-left: 20px;
+            }
+        }
+
+        .banner-brand .text {
+            left: 20px;
+        }
+    }
+}
+
+@media only screen and (max-width : 1023px) {
+    .center {
+        padding: 0 20px;
+    }
+
+    .wrapper {
+        padding-bottom: 140px;
+    }
+
+    #header {
+        height: 100px;
+
+        .box-menu-mobile {
+            display: block;
+        }
+
+        .container-header {
+            z-index: 3;
+        }
+
+        #menu {
+            .transition(top .4s ease);
+            .transform(translate(0,0));
+            position: fixed;
+            width: 100%;
+            top: -100vh;
+            left: 0;
+            height: 100vh;
+            z-index: 200px;
+            overflow-y: auto;
+            overflow-x: hidden;
+
+            &.show {
+                top: 0;
+            }
+
+            ul.dropdown {
+                width: 100%;
+                padding-top: 100px;
+
+                li {
+                    width: 100%;
+                    height: auto;
+                    border-left: 0;
+                    padding: 0;
+                    border-bottom: 1px solid #fff;
+                    background-color: #1cb2b1;
+                    text-align: center;
+
+                    ul li {
+                        border-top: none;
+                        background: #2c8e98;
+
+                        &:last-child {
+                            border-bottom: 0;
+                        }
+                    }
+
+                    .lk-sub {
+                        background: #3b6a80;
+                        padding: 5px 0;
+                        color: #1cb2b1;
+
+                        font-size: 14px;
+                    }
+
+                    a {
+                        display: block;
+                        width: 100%;
+                        font-size: 16px;
+                        padding: 10px 0;
+                        color: #fff;
+                        border: 0;
+                        line-height: normal !important;
+
+                        br {
+                            display: none;
+                        }
+                    }
+
+                    &.item-menu-face {
+                        background-color: rgba(235,235,235,.95);
+                        border-color: #dcdcdc;
+                    }
+
+                    .box-btn-facebook {
+                        border: 0;
+                        padding: 10px 0;
+
+                        a {
+                            padding: 0;
+                        }
+                    }
+                }
+
+                ul {
+                    .transform(translate(0,0));
+                    position: relative;
+                    display: block !important;
+                    opacity: 1 !important;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                    padding: 0;
+                    box-shadow: none;
+                    border-radius: 0;
+                    background-color: #2c8e98;
+
+                    li {
+                        a {
+                            font-size: 16px;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+
+        .center {
+            padding: 0;
+            .clearfix;
+        }
+
+        .box-access {
+            border-bottom-width: 1px;
+            width: 100%;
+            padding: 0 10px;
+            box-sizing: border-box;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 43px;
+            line-height: 43px;
+            position: relative;
+
+
+            .box-query-certificate, .box-vgp-accerss {
+                margin-right: 20px;
+
+                a {
+                    display: block;
+                    font-size: 10px;
+                    color: #1bb1b0;
+                    font-family: @bold;
+
+                    &:after {
+                        display: inline-block;
+                        content: '';
+                        width: 1px;
+                        height: 30px;
+                        background: #3b6a80;
+                        float: right;
+                        margin: 6px 0 0;
+                        margin-left: 20px;
+                    }
+                }
+
+                form {
+                    display: none;
+                }
+            }
+
+            .languages {
+                margin-top: 13px;
+            }
+        }
+
+        .logo-viagreen {
+            display: block;
+            margin-top: 11px;
+            height: 32px;
+            width: 116px;
+            margin-left: 22px;
+        }
+    }
+
+    main {
+        .banner-home {
+            height: 600px;
+        }
+
+        .parallax-viagreen {
+            .line-map {
+                display: none;
+            }
+
+            .globe {
+                top: 250px;
+                margin-left: -500px;
+            }
+
+            .cloud {
+                &.cloud-01 {
+                    top: 440px;
+                    left: -342px;
+                    margin-left: 0;
+                }
+            }
+
+            h1 {
+                font-size: 56px;
+            }
+
+            p {
+                font-size: 27px;
+
+                br {
+                    display: none;
+                }
+            }
+
+            .lnk-know-more {
+                font-size: 30px;
+                margin-top: 10px;
+
+                span {
+                    font-size: 30px;
+                }
+            }
+        }
+
+        .viagreen-home {
+            .container {
+                height: 1900px;
+            }
+
+            .text-01 {
+                width: 596px;
+                top: 100px;
+                margin-left: -298px;
+            }
+
+            .text-02 {
+                width: 80%;
+                top: 1110px;
+                margin-left: -40%;
+                padding-bottom: 340px;
+
+                .cloud-co2 {
+                    width: 68%;
+                    top: initial;
+                    bottom: 0;
+                    left: 50%;
+                    margin-left: -34%;
+                }
+
+                .text {
+                    width: 55%;
+                    margin: 0;
+                }
+
+                .seal-vgp {
+                    width: 40%;
+                }
+            }
+        }
+
+        .viagreen-internal {
+            .globe {
+                top: 300px;
+                margin-left: -500px;
+            }
+
+            .cloud.cloud-02 {
+                left: initial;
+                margin-left: 0;
+                right: -200px;
+            }
+
+            .text-01 {
+                position: relative;
+                width: 600px;
+                margin: 100px auto 0;
+            }
+
+            .text-02 {
+                position: relative;
+                width: 600px;
+                margin: 700px auto 0;
+                padding: 0 0 345px;
+
+                img {
+                    width: 334px;
+                    top: initial;
+                    bottom: 0;
+                    left: 50%;
+                    margin-left: -167px;
+                }
+            }
+
+            .text-03 {
+                position: relative;
+                width: 600px;
+                margin: 50px auto 0;
+                padding: 0 0 328px;
+
+                img {
+                    width: 380px;
+                    top: initial;
+                    bottom: 0;
+                    left: 50%;
+                    margin-left: -190px;
+                }
+            }
+
+            .text-04 {
+                position: relative;
+                width: 600px;
+                margin: 50px auto 0;
+                padding: 0 0 338px;
+
+                img {
+                    width: 268px;
+                    top: initial;
+                    bottom: 0;
+                    left: 50%;
+                    margin-left: -134px;
+                }
+            }
+        }
+
+        .solution-home {
+            .pull-left {
+                width: 100%;
+                height: 555px;
+            }
+
+            .text {
+                width: 60%;
+                font-size: 24px;
+
+                h1 {
+                    font-size: 56px;
+                    line-height: 54px;
+                }
+            }
+        }
+
+        .banner-brand .text {
+            width: 450px;
+        }
+
+        .symbol ul li {
+            width: 50%;
+            margin-bottom: 40px;
+        }
+
+        .symbol-content .text-02 img {
+            width: 280px;
+        }
+    }
+
+    #footer {
+        height: 140px;
+
+        .center {
+            display:flex;
+            flex-flow: column;
+        }
+
+        .box-rights {
+            order: 2;
+            text-align: center;
+            border-top: 2px solid #3b6a80;
+            display:flex;
+            flex-flow: column;
+            height: 70px;
+
+
+            .ocsso {
+                position: relative;
+                display: block;
+                text-align: center;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: auto;
+                height: auto;
+                order: 2;
+                transform: translateY(0);
+                -webkit-transform: translateY(0);
+                -moz-transform: translateY(0);
+                -o-transform: translateY(0);
+                -ms-transform: translateY(0);
+                background-size: 110px;
+            }
+
+            small {
+                order: 1;
+                line-height: 100%;
+                margin-top: 23px;
+                margin-bottom: 7px;
+                font-size: 10px;
+            }
+        }
+
+        .box-cdp {
+            position: relative;
+            order: 1;
+            max-width: 100%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            transform: translateY(0);
+            -webkit-transform: translateY(0);
+            -moz-transform: translateY(0);
+            -o-transform: translateY(0);
+            -ms-transform: translateY(0);
+
+            img {
+                width: 70px;
+                margin-top: 19px;
+            }
+
+            span {
+                position: relative;
+                top: -10px;
+                margin-right: 20px;
+                color: #209ddc;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : 767px) {
+    main {
+        .banner-home {
+            height: 320px;
+        }
+
+        .slider-banner-home .slider-item h1 {
+            max-width: 60%;
+            font-size: 24px;
+            line-height: 26px;
+            margin-top: -10px;
+        }
+
+        .parallax-viagreen {
+            .globe {
+                width: 560px;
+                top: 90px;
+                margin-left: -280px;
+            }
+
+            .cloud {
+                &.cloud-01 {
+                    width: 225px;
+                    top: 180px;
+                    left: -140px;
+                    margin-left: 0;
+                }
+
+                &.cloud-02 {
+                    width: 180px;
+                    top: 468px;
+                    left: -100px;
+                    margin-left: 0;
+                }
+
+                &.cloud-03 {
+                    width: 160px;
+                    top: 448px;
+                    left: initial;
+                    right: -100px;
+                    margin-left: 0;
+                }
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+
+            .lnk-know-more {
+                font-size: 13px;
+
+                span {
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .viagreen-home {
+            .container {
+                height: 900px;
+            }
+
+            .text-01 {
+                width: 270px;
+                top: 44px;
+                margin-left: -135px;
+            }
+
+            .text-02 {
+                width: 86%;
+                top: 550px;
+                padding-bottom: 140px;
+
+                .cloud-co2 {
+                    width: 68%;
+                    top: initial;
+                    bottom: 0;
+                    left: 50%;
+                    margin-left: -34%;
+                }
+
+                .text {
+                    width: 50%;
+                    margin: 0;
+                }
+
+                .seal-vgp {
+                    width: 45%;
+                }
+            }
+        }
+
+        .viagreen-internal {
+            .container {
+                padding-bottom: 50px;
+            }
+
+            .globe {
+                top: 130px;
+                margin-left: -280px;
+            }
+
+            .cloud {
+                &.cloud-01 {
+                    top: 215px;
+                }
+
+                &.cloud-02 {
+                    top: 494px;
+                }
+
+                &.cloud-03 {
+                    right: -108px;
+                }
+            }
+
+            .text-01 {
+                position: relative;
+                width: 280px;
+                margin: 45px auto 0;
+            }
+
+            .text-02 {
+                position: relative;
+                width: 280px;
+                margin: 380px auto 0;
+                padding: 0 0 150px;
+
+                img {
+                    width: 148px;
+                    margin-left: -74px;
+                }
+            }
+
+            .text-03 {
+                position: relative;
+                width: 280px;
+                margin: 25px auto 0;
+                padding: 0 0 150px;
+
+                img {
+                    width: 170px;
+                    margin-left: -85px;
+                }
+            }
+
+            .text-04 {
+                position: relative;
+                width: 280px;
+                margin: 25px auto 0;
+                padding: 0 0 150px;
+
+                img {
+                    width: 120px;
+                    margin-left: -60px;
+                }
+            }
+        }
+
+        .eco-mission {
+            padding: 30px 0 0;
+
+            h1 {
+                width: 264px;
+                font-size: 15px;
+                line-height: 26px;
+                margin-bottom: 30px;
+
+                span {
+                    width: 168px;
+                    height: 22px;
+                }
+            }
+
+            ul {
+                margin-top: 30px;
+
+                li {
+                    width: 100%;
+                    height: auto;
+                    border-left: 0;
+                    border-top: 1px solid #d3d3d3;
+                    font-size: 12px;
+                    padding-bottom: 30px;
+                }
+            }
+        }
+
+        .solution-home {
+            .pull-left {
+                height: 250px;
+            }
+
+            .text {
+                font-size: 11px;
+
+                h1 {
+                    font-size: 25px;
+                    line-height: 24px;
+                }
+            }
+
+            .solution-ecommerce, .solution-consulting {
+                .text {
+                    width: 60%;
+                }
+            }
+        }
+
+        .banner-brand {
+            height: 300px;
+
+            .text {
+                width: 60%;
+                font-size: 12px;
+
+                h1 {
+                    font-size: 22px;
+                }
+            }
+        }
+
+        .symbol {
+            padding: 35px 0;
+
+            ul {
+                position: relative;
+                width: 200px;
+                margin: 40px auto 0;
+
+                li {
+                    width: 100%;
+                    font-size: 12px;
+                    margin-bottom: 40px;
+
+                    img {
+                        width: 102px;
+                    }
+                }
+            }
+        }
+
+        .symbol-content {
+            font-size: 12px;
+
+            .symbol-big {
+                top: 60px;
+                bottom: initial;
+                left: -263px;
+                margin: 0;
+                height: 370px;
+            }
+
+            .text-01 {
+                float: none;
+                position: relative;
+                width: 280px;
+                margin: 40px auto 320px;
+            }
+
+            .text-02 {
+                float: none;
+                position: relative;
+                width: 280px;
+
+                img {
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width : 479px) {
+    #header {
+        .box-access {
+            .box-query-certificate, .box-vgp-accerss {
+                margin-right: 8px;
+
+                a {
+                    font-size: 9px;
+
+                    &:after {
+                        margin-left: 8px;
+                    }
+                }
+
+                form {
+                    display: none;
+                }
+            }
+        }
+
+    }
+}

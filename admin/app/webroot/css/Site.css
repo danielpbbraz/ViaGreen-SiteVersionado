@@ -1,0 +1,193 @@
+﻿html {
+    background: #f5f5f1 url(../img/bg_interna.jpg) no-repeat bottom;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    min-height: 750px;
+    padding-bottom: 250px;
+}
+
+body {
+    
+    color: #333;
+    font-size: .85em;
+    font-family: "Segoe UI", Arial, Helvetica, Verdana, Sans-Serif;
+    margin: 0;
+    padding: 0;
+    min-width: 768px;
+    height: 100%;
+    
+}
+
+header {
+    background: #f2f2f2;
+    height:133px;
+    position: relative;
+}
+
+    header h1 {
+        text-indent: -9999px;
+        background: url(../img/logo_cliente.png) no-repeat;
+        width: 274px;
+        height: 86px;
+        position: absolute;
+        left: 22px;
+        top: 24px;
+    }
+
+    header h2 {
+        font-size: 1.4em;
+    }
+    header #sistema-txt {
+        background: url(../img/tit_sistema.png) no-repeat;
+        width: 475px;
+        height: 29px;
+        position: absolute;
+        right: 48px;
+        top: 70px;
+    }
+    header ul {
+        list-style: none;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        display: block;
+    }
+
+        header ul a {
+            color: #333;
+        }
+
+        header ul li {
+            float: left;
+            margin-left: 10px;
+        }
+
+#menu-topo ul {
+    width: 100%;
+}
+
+    #menu-topo ul li {
+        float: left;
+        margin-right: 10px;
+        position: relative;
+    }
+
+#menu-topo > ul > li:first-child {
+    margin-left: 20px;
+}
+
+#menu-topo > ul > li:hover .sub-menu {
+    display: block;
+}
+
+#menu-topo {
+    background: #efeeef;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #c8c8c8;
+    border-width: 1px 0;
+}
+
+    #menu-topo a {
+        text-decoration: none;
+        display: block;
+        margin-right: 20px;
+        font-weight: bold;
+        color: #000;
+        font-size: 1em;
+    }
+
+    #menu-topo ul li .sub-menu {
+        display: none;
+        position: absolute;
+        padding: 0;
+        left: 0;
+        top: 25px;
+        width: 125px;
+    }
+
+        #menu-topo ul li .sub-menu ul {
+            position: absolute;
+            background: #EFEEEF;
+            padding: 0;
+            border: 1px solid #C8C8C8;
+            border-width: 1px 1px 1px;
+            left: 0;
+            top: 5px;
+            width: 125px;
+        }
+
+    #menu-topo ul li ul li {
+        height: 20px;
+        line-height: 20px;
+        display: block;
+        float: none;
+        margin-right: 0;
+    }
+
+        #menu-topo ul li ul li a {
+            background:#fff;
+            display: block;
+            border-left: 4px solid #c8c8c8;
+            font-size: 12px;
+            font-weight: normal;
+            padding-left: 10px;
+            width: 111px;
+        }
+         #menu-topo ul li ul li a:hover {
+            background:#c8c8c8;
+        }
+
+#menu-pag {
+    padding: 0 20px;
+}
+
+#conteudo {
+    padding: 20px;
+    background:#fff;
+}
+#conteudo h2
+{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+    #conteudo p {
+        margin-bottom: 5px;
+    }
+footer {
+    background:#efeeef;
+    padding: 20px;
+    display:none;
+}
+.paginacao {
+	margin-top: 5px;
+	font-size: 12px;
+}
+.paginacao a {
+	text-decoration:none;
+	color: #000;
+}
+.paginacao a.current {
+	font-weight: bold;
+}
+#flashMessage {
+	border: 1px solid #c8c8c8;
+	padding:10px;
+	margin: 5px 0 20px;
+}
+.input.checkbox label {
+	float: left;
+}
+.input.checkbox {
+	margin: 5px 0;
+	overflow: hidden;
+	height: 30px;
+}
+.input.checkbox input {
+	margin: 0;
+	margin-left: 5px;
+	position: relative;
+	top: 12px;
+	padding: 0;
+}
