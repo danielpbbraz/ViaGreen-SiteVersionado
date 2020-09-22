@@ -14,7 +14,7 @@
 			<ul>
 				<li data-ani-type="fade-top" data-ani-delay=".1">
 					<figure><img src="media/img/simbolo-01.png"></figure>
-					<p>Ponta curvada em forma de bico representando os ares.</p>
+					<p>Ponta curvada em forma de bico representando os ares</p>
 				</li>
 				<li data-ani-type="fade-top" data-ani-delay=".1">
 					<figure><img src="media/img/simbolo-02.png"></figure>
