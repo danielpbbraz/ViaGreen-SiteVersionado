@@ -4,7 +4,7 @@
 		<img src="media/img/banner-fake-1.gif">
 		<div class="center">
 			<div class="title">
-				<h1 data-ani-type="fade-top" data-ani-delay=".2">LOGÍSTICA<br><strong>SUSTENTÁVEL</strong></h1>
+				<h1 data-ani-type="fade-top" data-ani-delay=".2">asgdvyuasdyhu<br><strong>SUSTENTÁVEL</strong></h1>
 			</div>
 		</div>
 	</div>
