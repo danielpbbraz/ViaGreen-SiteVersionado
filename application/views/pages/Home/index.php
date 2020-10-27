@@ -56,7 +56,7 @@
 
 				<h1>O instituto</h1>
 
-				<p>O Instituto Via Green é uma organização brasileira sem fins lucrativos que busca difundir a cultura de gestão ambiental e de desenvolvimento sustentável nos diferentes setores da economia e proporcionar melhores condições socioambientais para a sociedade.</p>
+				<p>O Instituto Via Green é uma organização da sociedade civil (OSC), sem fins lucrativos que prima pela difusão, apoio e desenvolvimento de ações de interesse da sociedade, por meio da elaboração e execução de programas e soluções sustentáveis para diversos setores da economia.</p>
 
 				<a href="empresa/viagreen" class="lnk-know-more">Saiba mais <span>+</span></a>
 
